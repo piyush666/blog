@@ -67,7 +67,7 @@
         <li><a href="../contact.php">Contact</a></li> 
       <li><a href="../about_us.php">About Us</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" style="margin-right:2px;" >
         <li><a  href="userprofile.php">Profile</a></li>
       	<?php
 	if (!($blogger->isActive())){

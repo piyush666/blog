@@ -109,7 +109,7 @@ $bloggerName = $_GET['uName'];
 <h3 class="post-subtitle"> Category : <?php echo $row['blogCategory']; ?></h3>
 
  
- <img class="img-responsive"    src="data:image;base64,<?php echo $img['blogImage']; ?>" alt="..." style=" border-radius: 5px;">
+ <img class="img-responsive"   src="data:image;base64,<?php echo $img['blogImage']; ?>" alt="" style=" border-radius: 5px;" >
 <h3 class="post-blog"> <?php echo $row['blogDesc']; ?> </h3>
 
 <hr>
@@ -133,7 +133,7 @@ $bloggerName = $_GET['uName'];
     <div class="col-lg-5 col-lg-offset-4 col-md-5 col-md-offset-4">
     <h3>About Author</h3>
     
-    <img class="img-circle img-center img-responsive"  src="data:image;base64,<?php echo $res['photo']; ?>"  alt="" >
+    <img class="img-circle img-center img-responsive" onerror="this.onerror=null;this.src='me.png' " src="data:image;base64,<?php echo $res['photo']; ?>"  alt="..." >
     
 
     <h2 style="padding-left:20px"><?php echo $res['userName']; ?></h2>
@@ -141,7 +141,7 @@ $bloggerName = $_GET['uName'];
     <div class="col-lg-8 col-lg-offset-4 col-md-8 col-md-offset-4">
    
     <h4><?php if(!empty($res['Name'])) echo $res['Name']; ?></h4>
-    <h3><?php if($res['address']) echo '<small><span class="glyphicon glyphicon-map-marker"></span> </small>'.$res['address']; ?></h3>
+    <h3><?php if(!empty($res['address'])) echo '<small><span class="glyphicon glyphicon-map-marker"></span> </small>'.$res['address']; ?></h3>
     <h3><?php  if(!empty($res['about'])) echo '<small><span class="glyphicon glyphicon-bookmark"></span> </small>'.$res['about']; ?></h3>
     <h4><a href=""><?php if(!empty($res['contact'])) echo '<span class="glyphicon glyphicon-link"></span> '.$res['contact']; ?></a></h4>
     </div>

@@ -6,7 +6,7 @@ session_start();
 		require '../phpfile/classHeader.php';
 
 		if(!empty($_FILES['img']['tmp_name']))
-		{	echo " imm in if state <br>";
+		{	
 			if(getimagesize($_FILES['img']['tmp_name']) == FALSE )
 			{
 				echo " please select image";
@@ -15,32 +15,16 @@ session_start();
 			$img = addslashes($_FILES['img']['tmp_name']);
 				$img = file_get_contents($img);
 				$img = base64_encode($img);
-				echo $img;
-
+				
 				$blogger = new blogger();
 	$blogger->getDetails($_SESSION['userName']);
 	//calling function of blog class to save data.
-	echo "<br> till here";
 	$blog = new blog();
 	$blog->writeBlog($blogger->getBloggerId(),$_SESSION["userName"],$_POST['title'], $_POST['desc'],$_POST['category'],$img);
-	//echo "<br>" .$_POST['title'];
-	 //echo "<br>" . $_POST['desc'];
-		//echo "<br>" .$_POST['category'];
+
 			}
 		}
-/*
-		//for confirmation that img is saved in database,retrive that img!
-	$conn = new connect();		
-	$que = 'select * from blog_detail';
-	$result = $conn->exeQuery($que);
-	while($row = $result->fetch_assoc())
-	{
-		echo '<img class="img-responsive" width="90%" src="data:image;base64,' .$row['img']. '"> <br>' ; 
-	}
-
-*/
-
-	// header("location:../user/");
+	 header("location:../user/");
 
 ?>
 

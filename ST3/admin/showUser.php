@@ -47,18 +47,24 @@ else{
    if(!empty($_POST['blogId']) && !empty($_POST['bloggerId']) && !empty($_POST['confirmString']) ){
     $blog = new blog();
     $blog->deleteBlog($_POST['blogId'],$_POST['bloggerId']);
-    header("location:index.php");
     
    // echo $_POST['blogId'];
-   // echo $_POST['bloggerId'];
-    }
+  //  echo $_POST['bloggerId'];
+    // we need post[bloggerId] to load this page ,to set bloggerId after del submit form like previous page
+    echo  '<form name="forUser" action="showUser.php"  method="post">';
+    echo '<input type="hidden" name="bloggerId" value="'.$_POST['bloggerId'].'">'; 
+    echo '</form>';
     
-
-
-
-
+    }
+  
 }
 ?>
+<script type="text/javascript">
+  window.onload = function (){
+    document.forms['forUser'].submit();
+  }
+</script>
+
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >

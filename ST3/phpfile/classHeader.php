@@ -22,6 +22,9 @@ class blogger
 		$conn->exeQuery($create);
 		$conn->exeQuery($user);
 		$conn->exeQuery($profile);
+
+	 
+
 	}
 
 	private function checkUser ($userName)
@@ -159,7 +162,6 @@ class blog
 		$this->blogDesc = $blogDesc;
 		$this->blogCategory = $blogCategory;
 		$this->img = $img;
-		echo "<br>".$img;
  		$this->saveBlog();
 
 	}
@@ -171,7 +173,7 @@ class blog
 			$save = $conn->exeQuery($save);
 			if(!empty($save) )
 			echo '<br>save blog successfully';
-			else   echo "<br>errorBlog";
+			else   echo "<br>errorBlog";     // for confirmation purpose
 
 			$id = "SELECT MAX(blogId) as blogId  from blog_master";
 			$result = $conn->exeQuery($id);
@@ -183,12 +185,6 @@ class blog
 			echo '<br>save img  successfully';
 			else   echo "<br>errorImg";
 
-			echo "<br>".$this->bloggerId;
- 		echo "<br>".$this->blogAuthor;
- 		echo "<br>".$this->blogTitle;
- 		echo "<br>".$this->blogDesc;
- 		echo "<br>".$this->blogCategory;
- 		
 	}
 
 	public function updateBlog($blogId,$blogTitle,$blogDesc,$blogCategory,$img)
