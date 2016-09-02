@@ -89,7 +89,8 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
           $que = 'SELECT * from users';
           $result = $conn->exeQuery($que);
          
-
+          if($result)
+          {
 
           while($row = $result->fetch_assoc()) {
    ?>  
@@ -102,7 +103,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
                  else
                   document.getElementById('nameError').innerHTML = '';
 
-       <?php  } ?>   
+       <?php  } } ?>   
   
 }
 
@@ -125,13 +126,13 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
     </div>
     <div class="collapse navbar-collapse" id="nvbar">
       <ul class="nav navbar-nav">
-        <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="../ST3/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="#">News</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="about_us.php">About Us</a></li>
       </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right:2px;">
-        <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+        <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
         <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       </ul>   
     </div>

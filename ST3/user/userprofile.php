@@ -94,7 +94,7 @@ if(!empty($_FILES['photo']['tmp_name'])){
     </div>
     <div class="collapse navbar-collapse" id="nvbar">
       <ul class="nav navbar-nav">
-        <li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="../../ST3/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="#">News</a></li>
         <li><a href="../contact.php">Contact</a></li> 
       <li><a href="../about_us.php">About Us</a></li>
@@ -112,7 +112,7 @@ if(!empty($_FILES['photo']['tmp_name'])){
 	}
 
 	?>     
-        <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+        <li><a href="../user/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
         <li><a  href="../logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>

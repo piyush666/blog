@@ -15,19 +15,7 @@
 
 <style type="text/css">
 
-  .form-group  input,
-  .form-group textarea{
-    z-index: 1;
-  position: relative;
-  padding-right: 0;
-  padding-left: 0;
-  border: none;
-  border-radius: 0;
-  font-size: 1.5em;
-  background: none;
-  box-shadow: none !important;
-  resize: none;
-   } 
+  
 </style>
 
 </head>
@@ -55,18 +43,18 @@
         if(isset($_SESSION['userName'])){
         
         ?>
-          <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+          <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
           <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Your Home</a></li>
           <li><a  href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <?php  }
             elseif (isset($_SESSION['admin'])){
 
              ?>
-             <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+             <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
              <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Your Home</a></li>
              <li><a  href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
              <?php } else{   ?>
-              <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+              <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <?php } ?>

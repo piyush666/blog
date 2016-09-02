@@ -15,14 +15,17 @@ session_start();
 			$img = addslashes($_FILES['img']['tmp_name']);
 				$img = file_get_contents($img);
 				$img = base64_encode($img);
-				//echo $img;
+				echo $img;
 
 				$blogger = new blogger();
 	$blogger->getDetails($_SESSION['userName']);
 	//calling function of blog class to save data.
+	echo "<br> till here";
 	$blog = new blog();
-	$blog->writeBlog($blogger->getBloggerId(),$_SESSION["userName"], $_POST['title'], $_POST['desc'] , $_POST['category'] ,$img);
-
+	$blog->writeBlog($blogger->getBloggerId(),$_SESSION["userName"],$_POST['title'], $_POST['desc'],$_POST['category'],$img);
+	//echo "<br>" .$_POST['title'];
+	 //echo "<br>" . $_POST['desc'];
+		//echo "<br>" .$_POST['category'];
 			}
 		}
 /*
@@ -35,9 +38,9 @@ session_start();
 		echo '<img class="img-responsive" width="90%" src="data:image;base64,' .$row['img']. '"> <br>' ; 
 	}
 
-
 */
-	header("location:../user/");
+
+	// header("location:../user/");
 
 ?>
 

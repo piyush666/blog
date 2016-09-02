@@ -31,7 +31,7 @@ $bloggerName = $_GET['bloggerName'];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="../ST3/">PIYblogGERr</a>
+      <a class="navbar-brand" href="../ST3/">PIYblogGER</a>
     </div>
     <div class="collapse navbar-collapse" id="nvbar">
       <ul class="nav navbar-nav">
@@ -46,18 +46,18 @@ $bloggerName = $_GET['bloggerName'];
         if(isset($_SESSION['userName'])){
         
         ?>
-          <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+          <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
           <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Your Home</a></li>
           <li><a  href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <?php  }
             elseif (isset($_SESSION['admin'])){
 
              ?>
-             <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+             <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
              <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Your Home</a></li>
              <li><a  href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
              <?php } else{   ?>
-          <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+          <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <?php } ?>

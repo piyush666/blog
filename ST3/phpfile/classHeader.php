@@ -142,7 +142,7 @@ class blog
 	public function __construct()
 	{
 		//if table is not exist then it'll create
-		$que = "create table if not exists blog_master (blogId int primary key auto_increment,bloggerId int unique references blogger_info(bloggerId) ,blogAuthor char(50) ,blogTitle text, blogDesc longtext ,blogCategory text,createdDate date,updateDate date default NULL,blogActivity char(1) default 'A')";
+		$que = "create table if not exists blog_master (blogId int primary key auto_increment,bloggerId int references blogger_info(bloggerId) ,blogAuthor char(50) ,blogTitle text, blogDesc longtext ,blogCategory text,createdDate date,updateDate date default NULL,blogActivity char(1) default 'A')";
 		$createImage = "create table if not exists blog_detail (blogDetailId int primary key auto_increment,blogId int unique references blog_master(blogId) ,blogImage longblob)";
 
 		$conn = new connect();
@@ -159,20 +159,36 @@ class blog
 		$this->blogDesc = $blogDesc;
 		$this->blogCategory = $blogCategory;
 		$this->img = $img;
+		echo "<br>".$img;
  		$this->saveBlog();
+
 	}
 
 	public function saveBlog()
-	{
+	{		
 			$save = 'INSERT INTO blog_master (bloggerId ,blogAuthor,blogTitle ,blogDesc,blogCategory,createdDate) VALUES("'.$this->bloggerId.'","' .$this->blogAuthor. '","' .$this->blogTitle. '","' .$this->blogDesc. '","' .$this->blogCategory. '","' .date("Y-m-d"). '")';
 			$conn = new connect();
-			$conn->exeQuery($save);
+			$save = $conn->exeQuery($save);
+			if(!empty($save) )
+			echo '<br>save blog successfully';
+			else   echo "<br>errorBlog";
+
 			$id = "SELECT MAX(blogId) as blogId  from blog_master";
 			$result = $conn->exeQuery($id);
 			$row = $result->fetch_assoc();
 			$this->blogId = $row['blogId'];
 			$saveImg = 'INSERT INTO blog_detail(blogId,blogImage) VALUES ("'.$this->blogId. '","'.$this->img. '")';
-			$conn->exeQuery($saveImg);
+			$saveImg = $conn->exeQuery($saveImg);
+			if(!empty($saveImg) )
+			echo '<br>save img  successfully';
+			else   echo "<br>errorImg";
+
+			echo "<br>".$this->bloggerId;
+ 		echo "<br>".$this->blogAuthor;
+ 		echo "<br>".$this->blogTitle;
+ 		echo "<br>".$this->blogDesc;
+ 		echo "<br>".$this->blogCategory;
+ 		
 	}
 
 	public function updateBlog($blogId,$blogTitle,$blogDesc,$blogCategory,$img)

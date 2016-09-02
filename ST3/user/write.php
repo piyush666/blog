@@ -27,8 +27,6 @@
 </head>
 <?php
 	//get the details of the user for filling up the database.
-	
-	
 	session_start();
 	//redirect away if a session is not active
 	if(empty($_SESSION['userName']))

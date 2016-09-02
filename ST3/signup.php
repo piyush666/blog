@@ -83,8 +83,9 @@
       
           $conn = new connect();
           $que = 'SELECT * from users';
+          
           $result = $conn->exeQuery($que);
-         
+         if($result){
 
 
           while($row = $result->fetch_assoc()) {
@@ -98,7 +99,7 @@
                  else
                   document.getElementById('nameError').innerHTML = '';
 
-       <?php  }     ?>   
+       <?php  }   }  ?>   
   
 }
 
@@ -123,13 +124,13 @@
     </div>
     <div class="collapse navbar-collapse" id="nvbar">
       <ul class="nav navbar-nav">
-        <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="../ST3/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         <li><a href="#">News</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="about_us.php">About Us</a></li>
       </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right:2px;">
-        <li><a href="index.php"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+        <li><a href="../ST3/"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Log In</a></li>
       </ul>   
     </div>

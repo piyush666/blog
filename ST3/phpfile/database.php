@@ -20,8 +20,8 @@ class connect{
 		public function openConnection()
 		{
 			$this->connection = mysqli_connect($this->host,$this->userName,$this->password);
-			$createDB = "create database if not exists" .$this->db;
-			$this->connection->query($createDB);
+			$createDB = "create database if not exists " .$this->db;   // in sql query every space(_) is important
+ 			$this->connection->query($createDB);
 			mysqli_select_db($this->connection,$this->db);
 		} 
 		//function for close connection
